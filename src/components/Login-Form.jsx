@@ -2,11 +2,15 @@
 Form that the user will login with
 Has Form for Username, Password
 */
+//imported components
 import { TextField, Button, Container, Box, Typography } from "@mui/material";
+
+//style
+import "../style/login_form.css";
 
 function LoginForm(){
     return(
-        <Container>
+        <Container className="login_form">
             <Box>
                 <Typography>Username:</Typography>
                 <TextField variant="standard" label="example-user"/>

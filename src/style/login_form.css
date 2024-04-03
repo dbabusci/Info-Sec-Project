@@ -1,0 +1,7 @@
+.login_form{
+    display: flex;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    background-color: aqua;
+}

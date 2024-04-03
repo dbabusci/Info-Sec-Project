@@ -10,11 +10,14 @@ import { Container } from "@mui/material";
 //Custom Components
 import LoginForm from "../components/Login-Form";
 
+//style
+import "../style/general_page.css"
+
 function LoginPage() {
     return(
-        <Container>
+        <div className="login_page_container">
             <LoginForm/>
-        </Container>
+        </div>
     );
 }
 
