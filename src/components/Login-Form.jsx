@@ -10,19 +10,27 @@ import "../style/login_form.css";
 
 function LoginForm(){
     return(
-        <Container className="login_form">
-            <Box>
-                <Typography>Username:</Typography>
-                <TextField variant="standard" label="example-user"/>
-            </Box>
-            <Box>
-                <Typography>Password:</Typography>
-                <TextField variant="standard" label="password123"/>
-            </Box>
-            <Box>
-                <Button varient="contained">Login</Button>
-            </Box>
-        </Container>
+        <div className="login_form">
+            <div className="login_item"> 
+                <Typography className="login_label" fontSize={'250%'} textAlign={"center"}>Username:</Typography>
+                <TextField 
+                    variant="standard" 
+                    label="username"
+                    className="login_textfield"
+                />
+            </div>
+            <div className="login_item">
+                <Typography className="login_label" fontSize={'250%'} textAlign={"center"}>Password:</Typography>
+                <TextField 
+                    variant="standard" 
+                    label="password"
+                    className="login_textfield"    
+                />
+            </div>
+            <div className="login_item login_button_padding">
+                <Button varient="contained" className="login_submit_button">Login</Button>
+            </div>
+        </div>
     );
 }
 

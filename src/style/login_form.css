@@ -1,7 +1,42 @@
 .login_form{
-    display: flex;
+    display: grid;
+    grid-template-columns: [main-column] 100%;
+    grid-template-rows: [username-row-start] 40% [password-row-start] 40% [submit-row-start] 20% [end-row];
+    justify-content: center;
     align-items: center;
     height: 50%;
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 0 0 3px black;
+}
+
+.login_item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    background-color: aqua;
+    height: 100%;
+}
+
+.login_button_padding{
+    padding-top: 0%;
+    padding-bottom: 5%;
+    padding-left: 0%;
+    padding-right: 5%;
+}
+
+.login_submit_button{
+    width: 90%;
+    height: 95%;
+}
+
+.login_label{
+    height: 100%;
+    width: 50%;
+}
+
+.login_textfield{
+    height: 100%;
+    width: 50%;
 }

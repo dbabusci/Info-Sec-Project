@@ -10,12 +10,14 @@ import "./style/general_page.css";
 
 function App() {
   return(
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LoginPage/>}/>
-        <Route path="landing" element={<PasswordViewPage/>}/>
-      </Routes>
-    </BrowserRouter>
+    <div className="app_container">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage/>}/>
+          <Route path="landing" element={<PasswordViewPage/>}/>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
