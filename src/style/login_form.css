@@ -40,3 +40,18 @@
     height: 100%;
     width: 50%;
 }
+
+/*These two are the same but could be different in future*/
+.typography_holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.textfield_holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}

@@ -11,6 +11,7 @@ function PasswordTable() {
     return(
         <div className='table_holder'>
             <DataGrid
+                autoHeight
                 rows={DummyPasswordTableData}
                 columns={PasswordTableColumn}
                 initialState={{
