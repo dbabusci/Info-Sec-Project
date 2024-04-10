@@ -23,9 +23,8 @@ function LoginForm(){
     }
 
     const handleSubmit = () => {
-        console.log("Testing the password updates");
-        console.log(username);
-        console.log(password);  
+        //Replace this with logic for auth with mongodb
+        alert("Add stuff here");
     }
 
     return(

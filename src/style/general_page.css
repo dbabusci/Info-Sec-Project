@@ -1,7 +1,4 @@
 .app_container{
-    display: flex;
-    justify-content: center;/*May fuck shit up*/
-    align-items: center;/*See above*/
     width: 100vw;
     height: 100vh;
 }
@@ -15,6 +12,14 @@
 }
 
 .view_page_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.signup_page_container{
     display: flex;
     justify-content: center;
     align-items: center;
