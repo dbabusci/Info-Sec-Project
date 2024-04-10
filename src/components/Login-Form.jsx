@@ -2,8 +2,9 @@
 Form that the user will login with
 Has Form for Username, Password
 */
+
 //imported components
-import { TextField, Button, Container, Box, Typography } from "@mui/material";
+import { TextField, Button, Typography } from "@mui/material";
 import { useState } from "react";
 
 //style
@@ -24,7 +25,7 @@ function LoginForm(){
     const handleSubmit = () => {
         console.log("Testing the password updates");
         console.log(username);
-        console.log(password);
+        console.log(password);  
     }
 
     return(
