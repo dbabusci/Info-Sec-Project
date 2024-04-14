@@ -11,7 +11,13 @@ import "./style/general_page.css";
 
 function App() {
   return(
-    <div className="app_container">
+    <Container sx={{
+      display: "flex",
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100vw',
+      height: '100vh',
+    }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginPage/>}/>
@@ -19,7 +25,7 @@ function App() {
           <Route path="signup" element={<SignupPage/>}/>
         </Routes>
       </BrowserRouter>
-    </div>
+    </Container>
   );
 }
 

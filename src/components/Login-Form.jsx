@@ -6,11 +6,14 @@ Has Form for Username, Password
 //imported components
 import { TextField, Button, Typography } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 //style
 import "../style/login_form.css";
 
 function LoginForm(){
+    const navigate = useNavigate();
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -23,8 +26,13 @@ function LoginForm(){
     }
 
     const handleSubmit = () => {
-        //Replace this with logic for auth with mongodb
-        alert("Add stuff here");
+        //replace with logic for auth
+        if(username == 'Dom' && password == "inic") {
+            navigate("/landing");
+        }
+        else {
+            alert("Incorrect Username/Password");
+        }
     }
 
     return(
