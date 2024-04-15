@@ -4,7 +4,7 @@ Has Form for Username, Password
 */
 
 //imported components
-import { TextField, Button, Typography } from "@mui/material";
+import { TextField, Button, Typography, Link } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -71,6 +71,9 @@ function LoginForm(){
                     className="login_submit_button"
                     onClick={handleSubmit}
                 >Login</Button>
+            </div>
+            <div>
+                <Link href="/signup">Sign-Up</Link>
             </div>
         </div>
     );

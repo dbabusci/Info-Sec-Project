@@ -4,9 +4,9 @@
 }
 
 .login_page_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: [main-column-start] 100%;
+    grid-template-rows: [title-row-start] 20% [login-form-row-start] 80% [end-row];
     width: 100vw;
     height: 100vh;
 }
@@ -20,9 +20,9 @@
 }
 
 .signup_page_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: [main-column] 100%;
+    grid-template-rows: [title-row-start] 20% [signup-form-row-start] 80% [end-row];
     width: 100vw;
     height: 100vh;
 }

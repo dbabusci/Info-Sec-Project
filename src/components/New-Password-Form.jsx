@@ -76,13 +76,6 @@ function NewPasswordForm(){
                     value={confirmPassword}
                     onChange={handleConfirmPasswordChange}
                 />
-            </div>            <div>
-                <Typography>Password</Typography>
-                <TextField
-                    label="Password"
-                    value={password}
-                    onChange={handlePasswordChange}
-                />
             </div>
             <div>
                 <Typography>{strength}</Typography>

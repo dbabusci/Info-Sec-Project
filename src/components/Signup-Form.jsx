@@ -1,5 +1,5 @@
 //imported components
-import { TextField, Button, Typography } from "@mui/material";
+import { TextField, Button, Typography, Link } from "@mui/material";
 import { useState } from "react";
 
 //style
@@ -66,6 +66,9 @@ function SignupForm() {
                 <Button
                     onClick={handleSubmit}
                 >Submit</Button>
+            </div>
+            <div>
+                <Link href="/">Back to Login</Link>
             </div>
         </div>
     );
