@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Pages
 import LoginPage from "./pages/Login-Page";
@@ -10,22 +10,14 @@ import SignupPage from "./pages/Signup-Page";
 import "./style/general_page.css";
 
 function App() {
-  return(
-    <Container sx={{
-      display: "flex",
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100vw',
-      height: '100vh',
-    }}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LoginPage/>}/>
-          <Route path="landing" element={<PasswordViewPage/>}/>
-          <Route path="signup" element={<SignupPage/>}/>
-        </Routes>
-      </BrowserRouter>
-    </Container>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="landing" element={<PasswordViewPage />} />
+        <Route path="signup" element={<SignupPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

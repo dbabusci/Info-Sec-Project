@@ -1,12 +1,15 @@
 //imported components
 import { useState, useEffect } from "react";
-import { Container, TextField, Button, Typography } from "@mui/material";
+import { TextField, Button, Typography } from "@mui/material";
 
 //custom functions/methods
 import passwordStrength from "../methods/Password-Strength";
 import generatePassword from "../methods/Password-Generator";
 
-function NewPasswordForm(){
+//style
+import '../style/new_password_form.css';
+
+function NewPasswordForm() {
     //align items vertically maybe
     const [website, setWebsite] = useState('');
     const [username, setUsername] = useState('');
@@ -44,58 +47,67 @@ function NewPasswordForm(){
         setStrength(passwordStrength(password));
     })
 
-    return(
-        <div>
-            <div>
-                <Typography>Website Name</Typography>
-                <TextField
-                    label="Website Name"
-                    value={website}
-                    onChange={handleWebsiteChange}
-                />
+    return (
+        <div className="new_password_form_container">
+            <div className="new_password_form_title_container">
+                <Typography variant="h2">Create New Password</Typography>
             </div>
-            <div>
-                <Typography>Email/Username</Typography>
-                <TextField
-                    label="Email/Username"
-                    value={username}
-                    onChange={handleUsernameChange}
-                />
-            </div>
-            <div>
-                <Typography>Password</Typography>
-                <TextField
-                    label="Password"
-                    value={password}
-                    onChange={handlePasswordChange}
-                />
-            </div>
-            <div>
-                <Typography>Confirm Password</Typography>
-                <TextField
-                    label="Password"
-                    value={confirmPassword}
-                    onChange={handleConfirmPasswordChange}
-                />
-            </div>
-            <div>
-                <Typography>{strength}</Typography>
-            </div>
-            <div>
-                <Button
-                    variant="contained"
-                    onClick={handleSubmit}
-                >
-                    <Typography>Submit</Typography>
-                </Button>
-            </div>
-            <div>
-                <Button
-                    variant="contained"
-                    onClick={handleGeneratePassword}
-                >
-                    <Typography>Generate Password</Typography>
-                </Button>
+            <div className="form_container">
+                <div className="new_password_form_item">
+                    <Typography sx={{m: 1}}>Website Name:</Typography>
+                    <TextField
+                        sx={{m: 1}}
+                        label="Website Name"
+                        value={website}
+                        onChange={handleWebsiteChange}
+                    />
+                </div>
+                <div className="new_password_form_item">
+                    <Typography sx={{m: 1}}>Email/Username:</Typography>
+                    <TextField
+                        sx={{m: 1}}
+                        label="Email/Username"
+                        value={username}
+                        onChange={handleUsernameChange}
+                    />
+                </div>
+                <div className="new_password_form_item">
+                    <Typography sx={{m: 1}}>Password:</Typography>
+                    <TextField
+                        sx={{m: 1}}
+                        label="Password"
+                        value={password}
+                        onChange={handlePasswordChange}
+                    />
+                </div>
+                <div className="new_password_form_item">
+                    <Typography sx={{m: 1}}>Confirm Password:</Typography>
+                    <TextField
+                        sx={{m: 1}}
+                        label="Password"
+                        value={confirmPassword}
+                        onChange={handleConfirmPasswordChange}
+                    />
+                </div>
+                <div className="new_password_form_item">
+                    <Typography>Password Strength: {strength}</Typography>
+                </div>
+                <div className="new_password_form_item">
+                    <Button
+                        variant="contained"
+                        onClick={handleSubmit}
+                    >
+                        <Typography>Submit</Typography>
+                    </Button>
+                </div>
+                <div className="new_password_form_item">
+                    <Button
+                        variant="contained"
+                        onClick={handleGeneratePassword}
+                    >
+                        <Typography>Generate Password</Typography>
+                    </Button>
+                </div>
             </div>
         </div>
     );
