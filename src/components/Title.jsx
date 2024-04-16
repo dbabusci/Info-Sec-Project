@@ -7,6 +7,7 @@ function Title({pageTitle}){
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
+            width: "100%",
         }}>
             <Typography sx={{ fontSize: "10vh" }}>{pageTitle}</Typography>
         </Container>

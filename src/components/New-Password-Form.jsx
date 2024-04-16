@@ -35,8 +35,9 @@ function NewPasswordForm(){
     }
 
     const handleGeneratePassword = () => {
-        setPassword(generatePassword());
-        setConfirmPassword(generatePassword());
+        let genPassword = generatePassword();
+        setPassword(genPassword);
+        setConfirmPassword(genPassword);
     }
 
     useEffect(() => {

@@ -40,7 +40,7 @@ Takes in character and returns true or false if it is a symbol
 Probably exists but trivial to code
 */
 function isSymbol(character) {
-    let check = "`~!@#$%^&*()_+-={}[]|\:;<>,./?'";
+    let check = "`~!@#$%^&_=|:;<>";
     let exists = check.search(character);
     if(exists == -1) {return false;}
     else {return true;}
@@ -96,6 +96,7 @@ function passwordStrength(password) {
                 flagArray[3] = true;
                 break;
             default:
+                console.log(password[i]);
                 alert("Error: Not symbol, letter, or number????");
         }
     }
@@ -109,22 +110,16 @@ function passwordStrength(password) {
     switch(boxesTicked){
         case 1:
             return "Bad";
-            break;
         case 2:
             return "Bad";
-            break;
         case 3: 
             return "OK";
-            break;
         case 4: 
             return "OK";
-            break;
         case 5:
             return "Good";
-            break;
         default:
-            return "How Even?"
-            break;
+            return "No Password Entered"
     }
 }
 

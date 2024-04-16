@@ -12,7 +12,7 @@ function generatePassword() {
     let numbers = "1234567890";
     let lowercase = "abcdefghijklmnopqrstuvwxyz";
     let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let symbols = "`~!@#$%^&*()_+-={}[]|\:';<>,.?/";
+    let symbols = "`~!@#$%^&_=|:;<>";
 
     let randomNumberIndex = Math.floor(Math.random() * numbers.length);
     let randomLowercaseIndex = Math.floor(Math.random() * lowercase.length);
