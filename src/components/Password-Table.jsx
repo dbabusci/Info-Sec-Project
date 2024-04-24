@@ -1,5 +1,7 @@
 //imported components
 import { DataGrid } from '@mui/x-data-grid';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 //Data
 import { PasswordTableColumn, DummyPasswordTableData } from '../data/Password-Table';
@@ -8,6 +10,24 @@ import { PasswordTableColumn, DummyPasswordTableData } from '../data/Password-Ta
 import '../style/password_table.css';
 
 function PasswordTable() {
+
+    const [passwordEntries, setPasswordEntries] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:5255/api/Playlist');
+                console.log(response.data);
+                setPasswordEntries(response.data);
+            }
+            catch(error) {
+                console.log('Error: ', error);
+            }
+        };
+
+        fetchData();
+
+    },[])
+
     return(
         <div className='table_holder'>
             <DataGrid
