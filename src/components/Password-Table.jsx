@@ -6,6 +6,9 @@ import axios from 'axios';
 //Data
 import { PasswordTableColumn, DummyPasswordTableData } from '../data/Password-Table';
 
+//Custom Components
+import { changeData } from '../methods/Data-Format';
+
 //style
 import '../style/password_table.css';
 
@@ -16,8 +19,7 @@ function PasswordTable() {
         const fetchData = async () => {
             try {
                 const response = await axios.get('http://localhost:5255/api/Playlist');
-                console.log(response.data);
-                setPasswordEntries(response.data);
+                setPasswordEntries(changeData(response.data));
             }
             catch(error) {
                 console.log('Error: ', error);
@@ -32,7 +34,7 @@ function PasswordTable() {
         <div className='table_holder'>
             <DataGrid
                 autoHeight
-                rows={DummyPasswordTableData}
+                rows={passwordEntries}
                 columns={PasswordTableColumn}
                 initialState={{
                     pagination: {
