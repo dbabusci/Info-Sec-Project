@@ -1,10 +1,12 @@
 //imported components
 import { useState, useEffect } from "react";
 import { TextField, Button, Typography } from "@mui/material";
+import axios from "axios";
 
 //custom functions/methods
 import passwordStrength from "../methods/Password-Strength";
 import generatePassword from "../methods/Password-Generator";
+import { passwordEncrypt } from "../methods/Password-Encryption";
 
 //style
 import '../style/new_password_form.css';
@@ -16,6 +18,7 @@ function NewPasswordForm() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [strength, setStrength] = useState('');
+    const [hashedPassword, setHashedPassword] = useState('');
 
     const handleWebsiteChange = (e) => {
         setWebsite(e.target.value);
@@ -34,7 +37,28 @@ function NewPasswordForm() {
     }
 
     const handleSubmit = () => {
-        alert("Temp");
+        if(strength == 'OK' || strength == 'Good') { //make more good
+            const submitData = {
+                _id: "",
+                user: "Dominic",
+                websiteName: website,
+                websiteUsername: username,
+                websitePassword: hashedPassword,
+            };
+            const postData = async () => {
+                try {
+                    await axios.post("http://localhost:5255/api/Playlist", submitData)
+                }
+                catch(error) {
+                    console.log("Error posting: ", error);
+                }
+            }
+
+            postData();
+        }
+        else{
+            alert("Please enter a better password!");
+        }
     }
 
     const handleGeneratePassword = () => {

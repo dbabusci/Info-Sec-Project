@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 //Data
-import { PasswordTableColumn, DummyPasswordTableData } from '../data/Password-Table';
+import { PasswordTableColumn } from '../data/Password-Table';
 
 //Custom Components
 import { changeData } from '../methods/Data-Format';
@@ -19,6 +19,7 @@ function PasswordTable() {
         const fetchData = async () => {
             try {
                 const response = await axios.get('http://localhost:5255/api/Playlist');
+                //response.data.websitePassword = passwordDecrypt(response.data.websitePassword, "waaah")
                 setPasswordEntries(changeData(response.data));
             }
             catch(error) {

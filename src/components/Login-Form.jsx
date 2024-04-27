@@ -5,8 +5,11 @@ Has Form for Username, Password
 
 //imported components
 import { TextField, Button, Typography, Link } from "@mui/material";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
+//custom components
+import { auth } from "../data/Jank";
 
 //style
 import "../style/login_form.css";
@@ -26,12 +29,17 @@ function LoginForm(){
     }
 
     const handleSubmit = () => {
-        //replace with logic for auth
-        if(username == 'Dom' && password == "inic") {
+        let flag = false;
+        for(let i = 0; i < auth.length; ++i){
+            if(auth[i].username == username && auth[i].password == password){
+                flag = true;
+            }
+        }
+        if(flag == true){
             navigate("/landing");
         }
-        else {
-            alert("Incorrect Username/Password");
+        else{
+            alert("Incorrect username or password");
         }
     }
 
