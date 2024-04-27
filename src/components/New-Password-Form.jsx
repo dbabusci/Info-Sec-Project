@@ -12,7 +12,7 @@ import { passwordEncrypt } from "../methods/Password-Encryption";
 import '../style/new_password_form.css';
 
 function NewPasswordForm() {
-    //align items vertically maybe
+    const [currUser, setCurrUser] = useState(localStorage.getItem("user"));
     const [website, setWebsite] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -37,13 +37,13 @@ function NewPasswordForm() {
     }
 
     const handleSubmit = () => {
-        if(strength == 'OK' || strength == 'Good') { //make more good
+        if((strength == 'OK' || strength == 'Good') && JSON.parse(currUser) != "Dominic") { //make more good
             const submitData = {
                 _id: "",
-                user: "Dominic",
+                user: JSON.parse(currUser),
                 websiteName: website,
                 websiteUsername: username,
-                websitePassword: hashedPassword,
+                websitePassword: password,
             };
             const postData = async () => {
                 try {
@@ -57,7 +57,7 @@ function NewPasswordForm() {
             postData();
         }
         else{
-            alert("Please enter a better password!");
+            alert("Cannot make new password");
         }
     }
 

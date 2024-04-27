@@ -13,22 +13,35 @@ import { changeData } from '../methods/Data-Format';
 import '../style/password_table.css';
 
 function PasswordTable() {
-
+    const [user, setUser] = useState(localStorage.getItem("user"));
     const [passwordEntries, setPasswordEntries] = useState([]);
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:5255/api/Playlist');
-                //response.data.websitePassword = passwordDecrypt(response.data.websitePassword, "waaah")
-                setPasswordEntries(changeData(response.data));
+        if(JSON.parse(user) == "Dominic"){
+            const fetchData = async () => {
+                try {
+                    const response = await axios.get('http://localhost:5255/api/Playlist');
+                    //response.data.websitePassword = passwordDecrypt(response.data.websitePassword, "waaah")
+                    setPasswordEntries(changeData(response.data));
+                }
+                catch(error) {
+                    console.log('Error: ', error);
+                }
+            };
+            fetchData();
+        }
+        else{
+            const fetchData = async () => {
+                try {
+                    const toAdd = JSON.parse(user);
+                    const response = await axios.get("http://localhost:5255/api/Playlist/" + toAdd);
+                    setPasswordEntries(changeData(response.data));
+                }
+                catch(error) {
+                    console.log("Error:", error);
+                }
             }
-            catch(error) {
-                console.log('Error: ', error);
-            }
-        };
-
-        fetchData();
-
+            fetchData();
+        }
     },[])
 
     return(

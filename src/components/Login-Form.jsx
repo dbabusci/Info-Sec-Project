@@ -36,6 +36,7 @@ function LoginForm(){
             }
         }
         if(flag == true){
+            localStorage.setItem("user", JSON.stringify(username));
             navigate("/landing");
         }
         else{

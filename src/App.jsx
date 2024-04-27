@@ -17,16 +17,14 @@ import UserContext from "./components/User-Context";
 function App() {
   const user = "";
   return (
-    <UserContext Provider value={user}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="landing" element={<PasswordViewPage />} />
-          <Route path="signup" element={<SignupPage />} />
-          <Route path="test" element={<TestPage />} />
-        </Routes>
-      </BrowserRouter>
-    </UserContext>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="landing" element={<PasswordViewPage />} />
+        <Route path="signup" element={<SignupPage />} />
+        <Route path="test" element={<TestPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
