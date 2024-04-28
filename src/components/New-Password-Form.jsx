@@ -18,7 +18,6 @@ function NewPasswordForm() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [strength, setStrength] = useState('');
-    const [hashedPassword, setHashedPassword] = useState('');
 
     const handleWebsiteChange = (e) => {
         setWebsite(e.target.value);
@@ -57,6 +56,7 @@ function NewPasswordForm() {
             postData();
         }
         else{
+            console.log("What");
             alert("Cannot make new password");
         }
     }

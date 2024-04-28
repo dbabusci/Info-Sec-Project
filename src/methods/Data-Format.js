@@ -39,7 +39,7 @@ export function changeData(...apiData) {
         company = apiData[0][i].websiteName;
         username = apiData[0][i].websiteUsername;
         password = apiData[0][i].websitePassword;
-        strength = passwordStrength(apiData[0][i].websitePassword); //will have to decrypt this later
+        strength = passwordStrength(apiData[0][i].websitePassword); 
         ret.push({id, user, company, username, password, strength});
     }
 

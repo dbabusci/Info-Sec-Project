@@ -1,10 +1,10 @@
 export const PasswordTableColumn = [
     { field: 'id', type: 'string', headerName: 'ID', flex: 1 },
-    { field: 'user', headerName: 'User Name', flex: 1 },
-    { field: 'company', headerName: 'Company/Site', flex: 1 },
-    { field: 'username', headerName: 'Username/Email', flex: 1 },
-    { field: 'password', headerName: 'Password', flex: 1 },
-    { field: 'strength', headerName: 'Password Strength', flex: 1}, //Maybe make type an enum of Good, Medium, Bad
+    { field: 'user', type: 'string', headerName: 'User Name', flex: 1 },
+    { field: 'company', type: 'string', headerName: 'Company/Site', flex: 1 },
+    { field: 'username', type: 'string', headerName: 'Username/Email', flex: 1 },
+    { field: 'password', type: 'string', headerName: 'Password', flex: 1 },
+    { field: 'strength', type: 'string', headerName: 'Password Strength', flex: 1}, //Maybe make type an enum of Good, Medium, Bad
 ];
 
 export const DummyPasswordTableData = [

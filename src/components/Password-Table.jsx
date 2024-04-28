@@ -17,17 +17,16 @@ function PasswordTable() {
     const [passwordEntries, setPasswordEntries] = useState([]);
     useEffect(() => {
         if(JSON.parse(user) == "Dominic"){
-            const fetchData = async () => {
+            const fetchAllData = async () => {
                 try {
-                    const response = await axios.get('http://localhost:5255/api/Playlist');
-                    //response.data.websitePassword = passwordDecrypt(response.data.websitePassword, "waaah")
-                    setPasswordEntries(changeData(response.data));
+                    const admResponse = await axios.get("http://localhost:5255/api/Playlist");
+                    setPasswordEntries(changeData(admResponse.data));
                 }
                 catch(error) {
                     console.log('Error: ', error);
                 }
             };
-            fetchData();
+            fetchAllData();
         }
         else{
             const fetchData = async () => {
